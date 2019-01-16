@@ -5,7 +5,7 @@
 - 第一步： 添加 `JitPack` 到项目的根 `build.gradle` 中
 
 
-```android
+```gradle
 allprojects {
     repositories {
         ...
@@ -17,7 +17,7 @@ allprojects {
 - 第二步：添加库依赖
 
 
-```android
+```gradle
 dependencies {
     implementation 'com.github.huangziye:CommonViews:${latest_version}'
 }
@@ -38,7 +38,7 @@ dependencies {
 
 - **GifImageView**
 
-```
+```xml
 <com.hzy.views.GifImageView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -52,7 +52,7 @@ dependencies {
 
 - **LoadingView**
 
-```
+```xml
 <com.hzy.views.LoadingView
     android:id="@+id/loadingView"
     android:layout_centerInParent="true"
@@ -67,12 +67,12 @@ dependencies {
 
 - **GifImageView**
 
-[GifImageView](https://github.com/huangziye/CommonViews/blob/5212298fd271490c500bc5b17c75b08a84905b2b/screenshot/GifImageView.gif)
+![GifImageView](https://github.com/huangziye/CommonViews/blob/5212298fd271490c500bc5b17c75b08a84905b2b/screenshot/GifImageView.gif)
 
 
 - **LoadingView**
 
-[LoadingView](https://github.com/huangziye/CommonViews/blob/5212298fd271490c500bc5b17c75b08a84905b2b/screenshot/LoadingView.gif)
+![LoadingView](https://github.com/huangziye/CommonViews/blob/5212298fd271490c500bc5b17c75b08a84905b2b/screenshot/LoadingView.gif)
 
 
 
