@@ -1,6 +1,6 @@
-[![](https://jitpack.io/v/huangziye/base.svg)](https://jitpack.io/#huangziye/CommonViews)
+[![](https://jitpack.io/v/huangziye/CommonViews.svg)](https://jitpack.io/#huangziye/CommonViews)
 
-# 添加 `CommonViews` 到项目
+### 添加 `CommonViews` 到项目
 
 - 第一步： 添加 `JitPack` 到项目的根 `build.gradle` 中
 
@@ -23,17 +23,18 @@ dependencies {
 }
 ```
 
+<br />
 
-# 常用 View
+### 常用 View
 
 - `GifImageView` 既能支持ImageView控件原生的所有功能，同时还可以播放GIF图片。
 - `LoadingView`  有三个不同形状的 View 进行下落回弹并且不断切换，与此同时，底部有阴影在不断的切换大小，最底下是文字说明。
 
 
 
+<br />
 
-
-# 使用方式
+### 使用方式
 
 - GifImageView
 
@@ -60,14 +61,16 @@ dependencies {
 ```
 
 
+<br />
 
-# 效果图
+### 效果图
 
 - GifImageView
-
+[](https://github.com/huangziye/CommonViews/blob/5212298fd271490c500bc5b17c75b08a84905b2b/screenshot/GifImageView.gif)
 
 
 - LoadingView
+[](https://github.com/huangziye/CommonViews/blob/5212298fd271490c500bc5b17c75b08a84905b2b/screenshot/LoadingView.gif)
 
 
 
@@ -76,10 +79,9 @@ dependencies {
 
 
 
+<br />
 
-
-
-# 关于我
+### 关于我
 
 
 - [简书](https://user-gold-cdn.xitu.io/2018/7/26/164d5709442f7342)
@@ -88,8 +90,9 @@ dependencies {
 
 - [Github](https://github.com/huangziye)
 
+<br />
 
-# License
+### License
 
 ```
 Copyright 2018, huangziye
