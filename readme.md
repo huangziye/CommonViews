@@ -36,7 +36,7 @@ dependencies {
 
 ### 使用方式
 
-- GifImageView
+- **GifImageView**
 
 ```
 <com.hzy.views.GifImageView
@@ -50,7 +50,7 @@ dependencies {
 其中，**auto_play** 是用来控制是否自动播放，true 表示自动播放，false 表示不自动播放。
 
 
-- LoadingView
+- **LoadingView**
 
 ```
 <com.hzy.views.LoadingView
@@ -65,12 +65,14 @@ dependencies {
 
 ### 效果图
 
-- GifImageView
-[](https://github.com/huangziye/CommonViews/blob/5212298fd271490c500bc5b17c75b08a84905b2b/screenshot/GifImageView.gif)
+- **GifImageView**
+
+[GifImageView](https://github.com/huangziye/CommonViews/blob/5212298fd271490c500bc5b17c75b08a84905b2b/screenshot/GifImageView.gif)
 
 
-- LoadingView
-[](https://github.com/huangziye/CommonViews/blob/5212298fd271490c500bc5b17c75b08a84905b2b/screenshot/LoadingView.gif)
+- **LoadingView**
+
+[LoadingView](https://github.com/huangziye/CommonViews/blob/5212298fd271490c500bc5b17c75b08a84905b2b/screenshot/LoadingView.gif)
 
 
 
