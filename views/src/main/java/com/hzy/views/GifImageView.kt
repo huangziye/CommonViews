@@ -9,6 +9,8 @@ import android.os.SystemClock
 import android.util.AttributeSet
 import android.view.View
 import android.widget.ImageView
+import java.io.ByteArrayOutputStream
+import java.io.InputStream
 
 /**
  * GifImageView既能支持ImageView控件原生的所有功能，同时还可以播放GIF图片。
@@ -69,6 +71,11 @@ class GifImageView : ImageView, View.OnClickListener {
             if (mMovie != null) {
                 // 如果返回值不等于null，就说明这是一个GIF图片，下面获取是否自动播放的属性
                 isAutoPlay = ta.getBoolean(R.styleable.GifImageView_auto_play, false)
+                inputStream.reset()
+                /**
+                 * 第一次decodeStream时已经操作过inputStream了，这时候流的操作位置已经移动了，如果再次decodeStream则不是从流的起始位置解析，所以无法解析出Bitmap对象。
+                 * 只需要在再次解码之前使流读写位置恢复为起始位置即可 inputStream.reset()
+                 */
                 val bitmap = BitmapFactory.decodeStream(inputStream)
                 mImageWidth = bitmap.width
                 mImageHeight = bitmap.height
