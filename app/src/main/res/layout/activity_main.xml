@@ -15,6 +15,7 @@
             app:auto_play="false"
             android:src="@drawable/gif"/>-->
 
+
     <com.hzy.views.LoadingView
             android:id="@+id/loadingView"
             android:layout_centerInParent="true"

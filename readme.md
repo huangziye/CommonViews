@@ -25,11 +25,13 @@ dependencies {
 
 <br />
 
-### 常用 View
+### 常用 View（按字母先后顺序排序）
 
 - `GifImageView` 既能支持ImageView控件原生的所有功能，同时还可以播放GIF图片。
 - `LoadingView`  有三个不同形状的 View 进行下落回弹并且不断切换，与此同时，底部有阴影在不断的切换大小，最底下是文字说明。
 
+
+### 自定义 Dialog 需要继承 `BaseDialog`
 
 
 <br />

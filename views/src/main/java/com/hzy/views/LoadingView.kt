@@ -195,11 +195,4 @@ open class LoadingView : LinearLayout {
         msg.layoutParams = params
     }
 
-    private fun dp2px(dp: Float): Int {
-        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, resources.displayMetrics).toInt()
-    }
-
-    private fun px2dp(px: Float): Int {
-        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_PX, px, resources.displayMetrics).toInt()
-    }
 }
