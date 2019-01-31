@@ -15,7 +15,7 @@ import com.hzy.views.R
  * @author: ziye_huang
  * @date: 2019/1/30
  */
-abstract class BaseDialog : DialogFragment() {
+open abstract class BaseDialog : DialogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,28 +61,28 @@ abstract class BaseDialog : DialogFragment() {
     /**
      * 设置对话框的宽度
      */
-    fun setWidth(): Int {
+    protected fun setWidth(): Int {
         return ViewGroup.LayoutParams.WRAP_CONTENT
     }
 
     /**
      * 设置对话框的高度
      */
-    fun setHeigh(): Int {
+    protected fun setHeigh(): Int {
         return ViewGroup.LayoutParams.WRAP_CONTENT
     }
 
     /**
      * 对话框对齐方式
      */
-    fun setGravity(): Int {
+    protected fun setGravity(): Int {
         return Gravity.CENTER
     }
 
     /**
      * 获取屏幕的宽度
      */
-    fun getScreenWidth(): Int {
+    protected fun getScreenWidth(): Int {
         val windowManager = activity?.getSystemService(Context.WINDOW_SERVICE) as WindowManager
         val outMetrics = DisplayMetrics()
         windowManager.defaultDisplay.getMetrics(outMetrics)
@@ -92,7 +92,7 @@ abstract class BaseDialog : DialogFragment() {
     /**
      * 获取屏幕的高度
      */
-    fun getScreenHeight(): Int {
+    protected fun getScreenHeight(): Int {
         val windowManager = activity?.getSystemService(Context.WINDOW_SERVICE) as WindowManager
         val outMetrics = DisplayMetrics()
         windowManager.defaultDisplay.getMetrics(outMetrics)
