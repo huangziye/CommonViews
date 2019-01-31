@@ -55,34 +55,34 @@ abstract class BaseDialog : DialogFragment() {
      */
     @StyleRes
     protected fun setAnimation(): Int {
-        return 0
+        return -1
     }
 
     /**
      * 设置对话框的宽度
      */
-    protected fun setWidth(): Int {
+    fun setWidth(): Int {
         return ViewGroup.LayoutParams.WRAP_CONTENT
     }
 
     /**
      * 设置对话框的高度
      */
-    protected fun setHeigh(): Int {
+    fun setHeigh(): Int {
         return ViewGroup.LayoutParams.WRAP_CONTENT
     }
 
     /**
      * 对话框对齐方式
      */
-    protected fun setGravity(): Int {
+    fun setGravity(): Int {
         return Gravity.CENTER
     }
 
     /**
      * 获取屏幕的宽度
      */
-    protected fun getScreenWidth(): Int {
+    fun getScreenWidth(): Int {
         val windowManager = activity?.getSystemService(Context.WINDOW_SERVICE) as WindowManager
         val outMetrics = DisplayMetrics()
         windowManager.defaultDisplay.getMetrics(outMetrics)
@@ -92,7 +92,7 @@ abstract class BaseDialog : DialogFragment() {
     /**
      * 获取屏幕的高度
      */
-    protected fun getScreenHeight(): Int {
+    fun getScreenHeight(): Int {
         val windowManager = activity?.getSystemService(Context.WINDOW_SERVICE) as WindowManager
         val outMetrics = DisplayMetrics()
         windowManager.defaultDisplay.getMetrics(outMetrics)
