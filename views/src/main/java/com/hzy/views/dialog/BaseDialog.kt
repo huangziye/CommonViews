@@ -1,13 +1,11 @@
 package com.hzy.views.dialog
 
+import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.DisplayMetrics
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.view.Window
+import android.view.*
 import androidx.annotation.StyleRes
 import androidx.fragment.app.DialogFragment
 import com.hzy.views.R
@@ -63,17 +61,43 @@ abstract class BaseDialog : DialogFragment() {
     /**
      * 设置对话框的宽度
      */
-    abstract fun setWidth(): Int
+    protected fun setWidth(): Int {
+        return ViewGroup.LayoutParams.WRAP_CONTENT
+    }
 
     /**
      * 设置对话框的高度
      */
-    abstract fun setHeigh(): Int
+    protected fun setHeigh(): Int {
+        return ViewGroup.LayoutParams.WRAP_CONTENT
+    }
 
     /**
      * 对话框对齐方式
      */
-    abstract fun setGravity(): Int
+    protected fun setGravity(): Int {
+        return Gravity.CENTER
+    }
+
+    /**
+     * 获取屏幕的宽度
+     */
+    protected fun getScreenWidth(): Int {
+        val windowManager = activity?.getSystemService(Context.WINDOW_SERVICE) as WindowManager
+        val outMetrics = DisplayMetrics()
+        windowManager.defaultDisplay.getMetrics(outMetrics)
+        return outMetrics.widthPixels
+    }
+
+    /**
+     * 获取屏幕的高度
+     */
+    protected fun getScreenHeight(): Int {
+        val windowManager = activity?.getSystemService(Context.WINDOW_SERVICE) as WindowManager
+        val outMetrics = DisplayMetrics()
+        windowManager.defaultDisplay.getMetrics(outMetrics)
+        return outMetrics.heightPixels
+    }
 
     /**
      * 设置布局文件
