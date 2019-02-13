@@ -1,4 +1,4 @@
-package com.hzy.views
+package com.hzy.views.shape
 
 import android.content.Context
 import android.graphics.Canvas
@@ -7,6 +7,7 @@ import android.graphics.Path
 import android.util.AttributeSet
 import android.view.View
 import androidx.core.content.ContextCompat
+import com.hzy.views.R
 
 open class ShapeView : View {
 

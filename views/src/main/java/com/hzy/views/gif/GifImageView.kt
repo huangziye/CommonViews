@@ -1,4 +1,4 @@
-package com.hzy.views
+package com.hzy.views.gif
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -9,8 +9,7 @@ import android.os.SystemClock
 import android.util.AttributeSet
 import android.view.View
 import android.widget.ImageView
-import java.io.ByteArrayOutputStream
-import java.io.InputStream
+import com.hzy.views.R
 
 /**
  * GifImageView既能支持ImageView控件原生的所有功能，同时还可以播放GIF图片。

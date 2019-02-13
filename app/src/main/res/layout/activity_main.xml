@@ -8,7 +8,7 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-    <!--<com.hzy.views.GifImageView
+    <!--<com.hzy.views.gif.GifImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
@@ -16,7 +16,7 @@
             android:src="@drawable/gif"/>-->
 
 
-    <com.hzy.views.LoadingView
+    <com.hzy.views.loading.LoadingView
             android:id="@+id/loadingView"
             android:layout_centerInParent="true"
             android:layout_width="wrap_content"

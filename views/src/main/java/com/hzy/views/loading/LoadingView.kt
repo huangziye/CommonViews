@@ -1,4 +1,4 @@
-package com.hzy.views
+package com.hzy.views.loading
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
@@ -7,8 +7,8 @@ import android.animation.ObjectAnimator
 import android.content.Context
 import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
+import android.os.Build
 import android.util.AttributeSet
-import android.util.TypedValue
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AccelerateInterpolator
@@ -16,6 +16,9 @@ import android.view.animation.DecelerateInterpolator
 import android.widget.LinearLayout
 import androidx.annotation.ColorInt
 import androidx.annotation.DrawableRes
+import androidx.annotation.RequiresApi
+import com.hzy.views.R
+import com.hzy.views.shape.ShapeView
 import kotlinx.android.synthetic.main.loading_view.view.*
 
 open class LoadingView : LinearLayout {
@@ -131,6 +134,7 @@ open class LoadingView : LinearLayout {
     /**
      * 设置LoadingView的背景
      */
+    @RequiresApi(Build.VERSION_CODES.JELLY_BEAN)
     fun setLoadingViewBackground(@ColorInt backgroundColor: Int) {
         loadingViewRoot.background = ColorDrawable(backgroundColor)
     }
@@ -138,6 +142,7 @@ open class LoadingView : LinearLayout {
     /**
      * 设置LoadingView的背景
      */
+    @RequiresApi(Build.VERSION_CODES.JELLY_BEAN)
     fun setLoadingViewBackground(@DrawableRes drawable: Drawable) {
         loadingViewRoot.background = drawable
     }
