@@ -27,7 +27,7 @@ abstract class BaseDialog : DialogFragment() {
         super.onStart()
         val displayMetrics = DisplayMetrics()
         activity?.windowManager?.defaultDisplay?.getMetrics(displayMetrics)
-        val window = dialog.window
+        val window = dialog.window!!
         //去掉边框
         window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         window.setLayout(setWidth(), setHeigh())

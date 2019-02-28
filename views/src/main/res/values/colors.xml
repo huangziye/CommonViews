@@ -6,5 +6,10 @@
     <color name="shapeview_square">#aae84e40</color>
     <color name="shapeview_triangle">#aa72d572</color>
 
-
+    <!--加载对话框背景颜色-->
+    <color name="color_dialog_bg">#232931</color>
+    <!--下载对话框圆环的颜色-->
+    <color name="color_circle_ring">#27253d</color>
+    <!--下载对话框圆环的背景颜色-->
+    <color name="color_circle_ring_bg">#eeeeee</color>
 </resources>

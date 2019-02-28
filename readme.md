@@ -31,7 +31,10 @@ dependencies {
 - `LoadingView`  有三个不同形状的 View 进行下落回弹并且不断切换，与此同时，底部有阴影在不断的切换大小，最底下是文字说明。
 
 
-### 自定义 Dialog 需要继承 `BaseDialog`
+### 常用对话框
+
+- `BaseDialog` 自定义对话框可以继承 `BaseDialog`。
+- `LoadingDialog` LoadingDialog 对话框。
 
 
 <br />
