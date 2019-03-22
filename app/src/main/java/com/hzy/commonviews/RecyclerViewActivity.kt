@@ -6,6 +6,7 @@ import android.widget.AdapterView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -60,6 +61,8 @@ class RecyclerViewActivity : AppCompatActivity() {
 
         recyclerView.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         recyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
+        //设置增加或删除条目的动画
+        recyclerView.itemAnimator = DefaultItemAnimator()
 
         refreshLayout.autoRefresh()
         refreshLayout.setEnableLoadMoreWhenContentNotFull(false)//取消内容不满一页时开启上拉加载功能
@@ -67,7 +70,13 @@ class RecyclerViewActivity : AppCompatActivity() {
         refreshLayout.setOnLoadMoreListener { refreshlayout -> onLoadMoreData(refreshlayout) }
 
         mAdapter = MyAdapter(mutableListOf(), R.layout.recycler_item,
-            AdapterView.OnItemClickListener { parent, view, position, id -> })
+            AdapterView.OnItemClickListener { parent, view, position, id ->
+                Toast.makeText(
+                    this,
+                    mAdapter.getItem(position).title,
+                    Toast.LENGTH_SHORT
+                ).show()
+            })
         recyclerView.adapter = mAdapter
 
         msg = empty_layout.findViewById(R.id.tv_msg)
