@@ -20,14 +20,12 @@ abstract class BaseDialog : DialogFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //设置Style
-        setStyle(DialogFragment.STYLE_NO_TITLE, 0)
+        setStyle(STYLE_NO_TITLE, 0)
     }
 
     override fun onStart() {
         super.onStart()
-        val displayMetrics = DisplayMetrics()
-        activity?.windowManager?.defaultDisplay?.getMetrics(displayMetrics)
-        val window = dialog.window!!
+        val window = dialog?.window!!
         //去掉边框
         window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         window.setLayout(setWidth(), setHeigh())
@@ -43,7 +41,7 @@ abstract class BaseDialog : DialogFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         //去除标题栏
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog?.requestWindowFeature(Window.FEATURE_NO_TITLE)
         return createView(inflater, container)
     }
 

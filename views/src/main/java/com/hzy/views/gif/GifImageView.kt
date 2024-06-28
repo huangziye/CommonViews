@@ -8,14 +8,14 @@ import android.graphics.Movie
 import android.os.SystemClock
 import android.util.AttributeSet
 import android.view.View
-import android.widget.ImageView
+import androidx.appcompat.widget.AppCompatImageView
 import com.hzy.views.R
 
 /**
  * GifImageView既能支持ImageView控件原生的所有功能，同时还可以播放GIF图片。
  * Created by ziye_huang on 2019/1/11.
  */
-class GifImageView : ImageView, View.OnClickListener {
+class GifImageView : AppCompatImageView, View.OnClickListener {
 
     /**
      * 播放GIF动画的关键类
@@ -53,10 +53,7 @@ class GifImageView : ImageView, View.OnClickListener {
     private var isAutoPlay = false
 
     @JvmOverloads
-    constructor(context: Context, attrs: AttributeSet) : super(
-        context,
-        attrs
-    ) {
+    constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {
         //使用软解码，不用硬件加速
         setLayerType(View.LAYER_TYPE_SOFTWARE, null)
         val ta = context.obtainStyledAttributes(attrs, R.styleable.GifImageView)
@@ -89,10 +86,12 @@ class GifImageView : ImageView, View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        if (v!!.id == id) {
-            // 当用户点击图片时，开始播放GIF动画
-            isPlaying = true
-            invalidate()
+        when (v?.id) {
+            id -> {
+                // 当用户点击图片时，开始播放GIF动画
+                isPlaying = true
+                invalidate()
+            }
         }
     }
 

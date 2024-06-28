@@ -16,10 +16,10 @@ import androidx.recyclerview.widget.RecyclerView
  * @date: 2019/3/21
  */
 abstract class RecyclerAdapter<T>(
-    private var list: MutableList<T>, @LayoutRes private var layoutId: Int,
+    private var list: MutableList<T>,
+    @LayoutRes private var layoutId: Int,
     private var listener: AdapterView.OnItemClickListener
-) : RecyclerView.Adapter<RecyclerViewHolder>(),
-    ListAdapter {
+) : RecyclerView.Adapter<RecyclerViewHolder>(), ListAdapter {
 
     private var mLastPosition = -1
     private var mOpenAnimationEnable = true

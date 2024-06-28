@@ -8,6 +8,7 @@ import android.util.AttributeSet
 import android.view.View
 import androidx.core.content.ContextCompat
 import com.hzy.views.R
+import kotlin.math.sqrt
 
 open class ShapeView : View {
 
@@ -27,7 +28,7 @@ open class ShapeView : View {
         //只保证是正方形
         var width = MeasureSpec.getSize(widthMeasureSpec)
         var height = MeasureSpec.getSize(heightMeasureSpec)
-        setMeasuredDimension(Math.min(width, height), Math.min(width, height))
+        setMeasuredDimension(width.coerceAtMost(height), width.coerceAtMost(height))
     }
 
     override fun onDraw(canvas: Canvas?) {
@@ -39,18 +40,18 @@ open class ShapeView : View {
             }
             Shape.Square -> {
                 mPaint.color = ContextCompat.getColor(context, R.color.shapeview_square)
-                canvas!!.drawRect(0f, 0f, width.toFloat(), height.toFloat(), mPaint)
+                canvas?.drawRect(0f, 0f, width.toFloat(), height.toFloat(), mPaint)
             }
             Shape.Triangle -> {
                 mPaint.color = ContextCompat.getColor(context, R.color.shapeview_triangle)
                 if (null == mPath) {
                     mPath = Path()
                     mPath!!.moveTo((width / 2).toFloat(), 0f)
-                    mPath!!.lineTo(0f, (width / 2 * Math.sqrt(3.0)).toFloat())
-                    mPath!!.lineTo(width.toFloat(), (width / 2 * Math.sqrt(3.0)).toFloat())
+                    mPath!!.lineTo(0f, (width / 2 * sqrt(3.0)).toFloat())
+                    mPath!!.lineTo(width.toFloat(), (width / 2 * sqrt(3.0)).toFloat())
                     mPath!!.close()
                 }
-                canvas?.drawPath(mPath, mPaint)
+                canvas?.drawPath(mPath!!, mPaint)
             }
         }
     }

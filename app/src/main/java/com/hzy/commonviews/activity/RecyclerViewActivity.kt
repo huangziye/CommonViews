@@ -1,4 +1,4 @@
-package com.hzy.commonviews
+package com.hzy.commonviews.activity
 
 import android.os.Bundle
 import android.view.View
@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import com.google.gson.JsonParser
+import com.hzy.commonviews.R
 import com.hzy.commonviews.bean.ResponseEntity
 import com.hzy.commonviews.bean.XianDu
 import com.hzy.commonviews.service.ApiService

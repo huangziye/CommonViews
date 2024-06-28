@@ -5,10 +5,11 @@ import android.content.Context
 import android.content.DialogInterface
 import android.view.LayoutInflater
 import android.view.View
+import android.view.WindowManager
 import android.widget.LinearLayout
-import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.annotation.*
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
 import com.hzy.views.R
 
@@ -126,12 +127,7 @@ class LoadingDialog : Dialog {
                 val view = LayoutInflater.from(context).inflate(R.layout.dialog_loading, null)
                 val llLoadingDialog = view.findViewById<LinearLayout>(R.id.ll_loading_dialog)
                 val msgText = view.findViewById<TextView>(R.id.tipTextView)
-                llLoadingDialog.setBackgroundDrawable(
-                    ContextCompat.getDrawable(
-                        context,
-                        if (-1 == mBgColor) R.drawable.bg_loading_dialog else mBgColor
-                    )
-                )
+                llLoadingDialog.background = ContextCompat.getDrawable(context, if (-1 == mBgColor) R.drawable.bg_loading_dialog else mBgColor)
                 if (mIsShowMessage) {
                     if (-1 != mTextSize) {
                         msgText.textSize = mTextSize.toFloat()
@@ -145,10 +141,18 @@ class LoadingDialog : Dialog {
                 }
                 loadingDailog.setContentView(view)
             } else {
-                loadingDailog.setContentView(mView)
+                loadingDailog.setContentView(mView!!)
             }
             loadingDailog.setCancelable(mIsCancelable)
             loadingDailog.setCanceledOnTouchOutside(mIsCancelOutside)
+            loadingDailog.window?.setFlags(WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED, WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED);
+            // 开启硬件加速，防止出现锯齿
+            if (View.LAYER_TYPE_HARDWARE == mView?.layerType) {
+                // 支持硬件加速
+                AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
+            } else {
+                // 不支持硬件加速
+            }
             return loadingDailog
         }
 
