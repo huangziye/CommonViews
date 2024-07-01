@@ -17,8 +17,8 @@ class Activity5: BaseActivity() {
     override fun initView(bundle: Bundle?) {
         btn.text = "5"
         btn.setOnClickListener {
-//            ActivityUtil.finishTagActivity()
-            ActivityUtil.finishAllActivitiesExceptBottom()
+            ActivityUtil.finishTagActivity()
+//            ActivityUtil.finishAllActivitiesExceptBottom()
 //            startActivity(Intent(this, Activity5::class.java))
         }
     }

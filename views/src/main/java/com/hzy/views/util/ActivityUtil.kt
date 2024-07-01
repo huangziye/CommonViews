@@ -22,7 +22,9 @@ object ActivityUtil {
      * 针对特殊需求，需要关闭多个页面的情况
      */
     fun setTagActivity(activity: Activity) {
-        tagList.push(activity)
+        if (!tagList.contains(activity)) {
+            tagList.push(activity)
+        }
     }
 
     /**
@@ -129,6 +131,10 @@ object ActivityUtil {
      */
     fun onActivityDestroyed(activity: Activity) {
         removeActivity(activity)
+        if (tagList.contains(activity)) {
+            activity.finish()
+            tagList.remove(activity)
+        }
     }
 
 }
